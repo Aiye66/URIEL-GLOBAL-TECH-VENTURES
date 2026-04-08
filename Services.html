@@ -35,7 +35,7 @@
         /* Banner */
         .services-banner { 
             background: linear-gradient(rgba(10, 15, 44, 0.85), rgba(10, 15, 44, 0.85)), 
-                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop');
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             padding: 120px 20px; text-align: center; color: white;
@@ -43,28 +43,15 @@
         .services-banner h2 { font-size: 3.5rem; letter-spacing: 2px; }
         .services-banner p { color: var(--primary); text-transform: uppercase; font-weight: 600; margin-top: 10px; }
 
-        /* Floating WhatsApp Notification */
+        /* WhatsApp Notification Bar */
         .whatsapp-bar {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--whatsapp);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-            z-index: 9999;
-            animation: pulse 2s infinite;
-            transition: var(--transition);
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: var(--whatsapp); color: white; padding: 12px 30px; border-radius: 50px;
+            display: flex; align-items: center; gap: 15px; text-decoration: none; font-weight: 700;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); z-index: 9999;
+            animation: pulse 2s infinite; transition: var(--transition);
         }
-        .whatsapp-bar:hover { transform: translateX(-50%) translateY(-5px); background: #1ebe57; }
-        .whatsapp-bar i { font-size: 1.5rem; }
+        .whatsapp-bar:hover { transform: translateX(-50%) translateY(-5px); background: #1ebe57; color: white; }
 
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -75,47 +62,42 @@
         /* Service Blocks */
         .container { width: 90%; max-width: 1100px; margin: 50px auto; }
         .service-block { 
-            background: var(--white); 
-            border-radius: 25px; 
-            padding: 50px; 
-            margin-bottom: 60px; 
-            display: flex; 
-            align-items: center; 
-            gap: 40px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-            transition: var(--transition);
+            background: var(--white); border-radius: 25px; padding: 50px; 
+            margin-bottom: 60px; display: flex; align-items: center; gap: 40px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05); transition: var(--transition);
         }
         .service-block:nth-child(even) { flex-direction: row-reverse; }
         .service-block:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        
         .service-info { flex: 1.2; }
         .service-info h3 { font-size: 2rem; color: var(--dark); margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
         .service-info h3 i { color: var(--primary); }
         .service-info p { font-size: 1.05rem; color: #555; margin-bottom: 20px; }
         
-        .detail-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .detail-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px; }
         .detail-list li { padding-left: 25px; position: relative; font-weight: 500; font-size: 0.95rem; color: #444; }
         .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 5 Free'; font-weight: 900; position: absolute; left: 0; color: var(--primary); }
 
-        .software-tags { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 10px; }
-        .tag { background: #e0f7fa; color: #00838f; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; border: 1px solid #b2ebf2; }
+        .service-btn {
+            background: var(--dark); color: white; padding: 12px 25px; border-radius: 8px;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+            font-weight: 600; transition: 0.3s;
+        }
+        .service-btn:hover { background: var(--primary); color: var(--dark); }
 
         .service-visual { flex: 0.8; text-align: center; }
         .service-visual img { 
-            width: 100%; 
-            max-width: 400px; 
-            height: 280px;
-            object-fit: cover;
-            border-radius: 20px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%; max-width: 400px; height: 300px; object-fit: cover;
+            border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        footer { background: var(--dark); color: #888; text-align: center; padding: 40px; margin-top: 50px; }
+        footer { background: var(--dark); color: #888; text-align: center; padding: 40px; }
 
         @media (max-width: 850px) {
             .service-block, .service-block:nth-child(even) { flex-direction: column; padding: 30px; text-align: center; }
             .detail-list { grid-template-columns: 1fr; text-align: left; }
             .services-banner h2 { font-size: 2.2rem; }
-            .whatsapp-bar { width: 90%; font-size: 0.9rem; padding: 12px 15px; }
+            .whatsapp-bar { width: 90%; font-size: 0.85rem; padding: 12px 10px; }
         }
     </style>
 </head>
@@ -123,43 +105,42 @@
 
     <header>
         <nav>
-            <a href="MYWEB.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop" alt="Logo">
                 <h1>URIEL GLOBAL TECH VENTURES</h1>
             </a>
             <ul>
-                <li><a href="MYWEB.html">Home</a></li>
-                <li><a href="MYWEB.html#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <a href="https://wa.me/YOUR_NUMBER_HERE" class="whatsapp-bar">
+    <a href="https://wa.me/2349038467393" class="whatsapp-bar">
         <i class="fab fa-whatsapp"></i>
         <span>Click the WhatsApp Button to Contact Us</span>
     </a>
 
     <div class="services-banner">
-        <h2 data-aos="zoom-in">Our Services Breakdown</h2>
+        <h2 data-aos="zoom-in">Expert Services Breakdown</h2>
         <p data-aos="fade-up" data-aos-delay="200">Data-Driven • Technology-Led • Creatively Inspired</p>
     </div>
 
     <div class="container">
+
         <div class="service-block" data-aos="fade-up">
             <div class="service-info">
                 <h3><i class="fas fa-chart-pie"></i> Data Analysis & Visualisation</h3>
-                <p>We transform raw data into actionable intelligence. Our enterprise-grade analysis helps organizations identify trends, optimize performance, and make evidence-based decisions.</p>
+                <p>We transform raw data into actionable intelligence. Our enterprise-grade analysis helps organizations identify trends and make evidence-based decisions.</p>
                 <ul class="detail-list">
                     <li>Predictive Data Modeling</li>
                     <li>Research Statistical Analysis</li>
-                    <li>Interactive Dashboard Creation</li>
-                    <li>Business Intelligence Reporting</li>
+                    <li>Interactive Dashboards</li>
+                    <li>Business Intelligence</li>
                 </ul>
-                <div class="software-tags">
-                    <span class="tag">Microsoft Excel</span>
-                    <span class="tag">Power BI</span>
-                    <span class="tag">SPSS Statistics</span>
-                </div>
+                <a href="https://wa.me/2349038467393?text=Hello, I am interested in your Data Analysis services." class="service-btn">
+                    Enquire on WhatsApp <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
             <div class="service-visual">
                 <img src="https://images.unsplash.com/photo-1551288049-bbda38a5f85d?q=80&w=1470&auto=format&fit=crop" alt="Data Analytics">
@@ -169,25 +150,61 @@
         <div class="service-block" data-aos="fade-up">
             <div class="service-info">
                 <h3><i class="fas fa-robot"></i> AI & Generative AI Training</h3>
-                <p>Empowering individuals and teams with the future of work. Our training modules cover the ethical and practical application of AI to boost daily productivity.</p>
+                <p>Empowering teams with the future of work. Our modules cover the ethical and practical application of AI to boost daily productivity.</p>
                 <ul class="detail-list">
-                    <li>Generative AI Fundamentals</li>
-                    <li>Prompt Engineering Mastery</li>
+                    <li>Prompt Engineering</li>
                     <li>AI Content Generation</li>
-                    <li>Task Automation Workflows</li>
+                    <li>Task Automation</li>
+                    <li>Ethical AI Usage</li>
                 </ul>
-                <div class="software-tags">
-                    <span class="tag">ChatGPT & Claude</span>
-                    <span class="tag">Midjourney</span>
-                    <span class="tag">AI Productivity Tools</span>
-                </div>
+                <a href="https://wa.me/2349038467393?text=Hello, I want to learn more about your AI Training." class="service-btn">
+                    Enquire on WhatsApp <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
             <div class="service-visual">
                 <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop" alt="Artificial Intelligence">
             </div>
         </div>
-        
+
+        <div class="service-block" data-aos="fade-up">
+            <div class="service-info">
+                <h3><i class="fab fa-google"></i> Google Workspace Mastery</h3>
+                <p>Complete mastery of cloud collaboration. We teach teams how to sync, share, and solve problems using the world's most powerful productivity suite.</p>
+                <ul class="detail-list">
+                    <li>Sheet Automation</li>
+                    <li>Cloud Security & Drive</li>
+                    <li>Collaborative Docs</li>
+                    <li>Professional Slides</li>
+                </ul>
+                <a href="https://wa.me/2349038467393?text=Hello, I need Google Workspace Training for my team." class="service-btn">
+                    Enquire on WhatsApp <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="service-visual">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop" alt="Team Collaboration">
+            </div>
         </div>
+
+        <div class="service-block" data-aos="fade-up">
+            <div class="service-info">
+                <h3><i class="fas fa-pen-nib"></i> Design & Web Development</h3>
+                <p>Our creative wing handles everything from your digital footprint to high-quality physical branding materials with extreme attention to detail.</p>
+                <ul class="detail-list">
+                    <li>Modern Web Development</li>
+                    <li>Banner & Flyer Design</li>
+                    <li>Custom IVs & Branding</li>
+                    <li>Large Format Printing</li>
+                </ul>
+                <a href="https://wa.me/2349038467393?text=Hello, I want to discuss a Design or Web project." class="service-btn">
+                    Enquire on WhatsApp <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="service-visual">
+                <img src="https://images.unsplash.com/photo-1581291518655-9523bb99d9f6?q=80&w=1470&auto=format&fit=crop" alt="Web Development">
+            </div>
+        </div>
+
+    </div>
 
     <footer>
         <p>&copy; 2026 URIEL GLOBAL TECH VENTURES. All Rights Reserved.</p>
