@@ -37,7 +37,7 @@
 
         /* Hero with Ken Burns Effect */
         .hero { 
-            height: 75vh; 
+            height: 80vh; 
             position: relative;
             overflow: hidden;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 0 20px;
@@ -51,7 +51,8 @@
         }
         @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.2); } }
 
-        .hero h2 { font-size: 3.5rem; margin-bottom: 15px; }
+        .hero h2 { font-size: 3.5rem; margin-bottom: 10px; }
+        .cac-badge { background: var(--primary); color: var(--dark); padding: 5px 20px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; margin-bottom: 20px; display: inline-block; text-transform: uppercase; }
         .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 30px; }
 
         .section-padding { padding: 100px 20px; max-width: 1200px; margin: auto; }
@@ -69,6 +70,14 @@
         .service-card ul li { margin-bottom: 12px; position: relative; padding-left: 30px; }
         .service-card ul li::before { content: '\f058'; font-family: 'Font Awesome 5 Free'; font-weight: 900; position: absolute; left: 0; color: var(--primary); }
 
+        #partnership { background: #fff; border-radius: 30px; margin: 50px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
+        .partnership-content { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; padding: 40px; }
+        .partnership-text { flex: 1; min-width: 300px; }
+        .partnership-text h3 { font-size: 2rem; color: var(--dark); margin-bottom: 20px; }
+        .partnership-text p { margin-bottom: 20px; font-size: 1.1rem; color: #666; }
+        .partnership-call { background: var(--dark); color: white; padding: 20px 30px; border-radius: 15px; display: inline-block; text-decoration: none; transition: var(--transition); }
+        .partnership-call:hover { background: var(--primary); color: var(--dark); transform: scale(1.05); }
+
         .btn { 
             background: var(--primary); color: var(--dark); padding: 16px 40px; border-radius: 50px; 
             text-decoration: none; font-weight: 700; transition: var(--transition); display: inline-block;
@@ -79,9 +88,9 @@
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .contact-item { background: #fff; padding: 40px; border-radius: 20px; text-align: center; transition: var(--transition); border: 1px solid #eee; }
         .contact-item:hover { background: var(--dark); color: var(--white); transform: scale(1.05); }
-        .contact-item i { font-size: 35px; color: var(--primary); margin-bottom: 20px; }
 
         footer { background: var(--dark); color: #888; text-align: center; padding: 50px; border-top: 1px solid #1a203c; }
+        .footer-cac { display: block; margin-top: 10px; font-size: 0.85rem; letter-spacing: 1px; }
         
         .whatsapp { 
             position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; 
@@ -90,7 +99,7 @@
         }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
-        @media (max-width: 768px) { .hero h2 { font-size: 2.5rem; } .logo h1 { display: none; } }
+        @media (max-width: 768px) { .hero h2 { font-size: 2.2rem; } .logo h1 { display: none; } }
     </style>
 </head>
 
@@ -98,13 +107,14 @@
 
     <header>
         <nav>
-            <a href="MYWEB.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="logo.png" alt="Logo">
                 <h1>URIEL GLOBAL TECH VENTURES</h1>
             </a>
             <ul>
-                <li><a href="MYWEB.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="Services.html">Services</a></li>
+                <li><a href="#partnership">Partnership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -112,6 +122,7 @@
 
     <section id="home" class="hero">
         <div class="hero-bg"></div>
+        <div class="cac-badge" data-aos="zoom-in">CAC: 9006371</div>
         <h2 data-aos="fade-down" data-aos-duration="1000">Innovation Meets Excellence</h2>
         <p data-aos="fade-up" data-aos-duration="1200">Your trusted partner for Data Analysis, Generative AI Training, and Premium Digital Design.</p>
         <div data-aos="zoom-in" data-aos-duration="1500">
@@ -161,6 +172,22 @@
         </div>
     </section>
 
+    <section id="partnership" class="section-padding" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Partnership & Investment</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="partnership-content">
+            <div class="partnership-text">
+                <h3>Grow With Us</h3>
+                <p>Uriel Global Tech Ventures offers exclusive business investment opportunities. Join us as we scale our innovative tech solutions.</p>
+                <a href="tel:09021702273" class="partnership-call">
+                    <i class="fas fa-phone-alt"></i> Call 09021702273 for Registration Form
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section-padding">
         <div class="section-title" data-aos="fade-up">
             <h2>Get In Touch</h2>
@@ -175,7 +202,7 @@
             <div class="contact-item" data-aos="fade-up">
                 <i class="fas fa-envelope"></i>
                 <h4>Email</h4>
-                <p><a href="mailto:Urielglobaltechventures@gmail.com" style="text-decoration:none; color:inherit;">Urielglobaltechventures@gmail.com</a></p>
+                <p>Urielglobaltechventures@gmail.com</p>
             </div>
             <div class="contact-item" data-aos="fade-left">
                 <i class="fas fa-phone-alt"></i>
@@ -187,6 +214,7 @@
 
     <footer>
         <p>&copy; 2026 URIEL GLOBAL TECH VENTURES. All Rights Reserved.</p>
+        <span class="footer-cac">Registered Business CAC: 9006371</span>
     </footer>
 
     <a href="https://wa.me/2349038467393" class="whatsapp" target="_blank">
@@ -195,11 +223,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+        AOS.init({ duration: 1000, once: true, offset: 100 });
     </script>
 
 </body>
