@@ -35,7 +35,6 @@
         nav ul li a::after { content: ''; width: 0; height: 2px; background: var(--primary); position: absolute; bottom: -5px; left: 0; transition: var(--transition); }
         nav ul li a:hover::after { width: 100%; }
 
-        /* Hero with Ken Burns Effect */
         .hero { 
             height: 80vh; 
             position: relative;
@@ -71,19 +70,72 @@
         .service-card ul li::before { content: '\f058'; font-family: 'Font Awesome 5 Free'; font-weight: 900; position: absolute; left: 0; color: var(--primary); }
 
         #partnership { background: #fff; border-radius: 30px; margin: 50px auto; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
-        .partnership-content { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; padding: 40px; }
+        .partnership-content { display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap; padding: 40px; }
         .partnership-text { flex: 1; min-width: 300px; }
         .partnership-text h3 { font-size: 2rem; color: var(--dark); margin-bottom: 20px; }
-        .partnership-text p { margin-bottom: 20px; font-size: 1.1rem; color: #666; }
-        .partnership-call { background: var(--dark); color: white; padding: 20px 30px; border-radius: 15px; display: inline-block; text-decoration: none; transition: var(--transition); }
-        .partnership-call:hover { background: var(--primary); color: var(--dark); transform: scale(1.05); }
+        
+        .agreement-box {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            color: #444;
+            max-height: 350px;
+            overflow-y: auto;
+        }
+        .agreement-box h4 { color: var(--dark); text-transform: uppercase; margin-bottom: 15px; border-bottom: 2px solid var(--primary); display: inline-block; }
+        .agreement-box ul { list-style: none; }
+        .agreement-box ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .agreement-box ul li::before { content: '•'; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+        
+        .bank-details {
+            background: var(--dark);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+        .bank-details h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        .bank-info { font-family: 'Courier New', Courier, monospace; font-size: 1.1rem; letter-spacing: 1px; }
+        .bank-info p { margin-bottom: 5px; }
+        .bank-info span { color: var(--primary); font-weight: bold; }
+
+        .bank-remark {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bank-remark strong { color: var(--primary); }
+        .wa-link-icon {
+            color: #25D366;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align: middle;
+        }
+        .wa-link-icon:hover {
+            transform: scale(1.2);
+            color: #fff;
+        }
+
+        .partnership-cta { text-align: center; margin-top: 20px; }
+        .cert-note { display: block; margin-top: 15px; font-size: 0.9rem; font-style: italic; color: var(--dark); font-weight: 600; }
 
         .btn { 
             background: var(--primary); color: var(--dark); padding: 16px 40px; border-radius: 50px; 
             text-decoration: none; font-weight: 700; transition: var(--transition); display: inline-block;
             box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
         }
-        .btn:hover { background: var(--white); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .btn:hover { background: var(--dark); color: var(--white); transform: translateY(-3px); }
 
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .contact-item { background: #fff; padding: 40px; border-radius: 20px; text-align: center; transition: var(--transition); border: 1px solid #eee; }
@@ -181,9 +233,40 @@
             <div class="partnership-text">
                 <h3>Grow With Us</h3>
                 <p>Uriel Global Tech Ventures offers exclusive business investment opportunities. Join us as we scale our innovative tech solutions.</p>
-                <a href="tel:09021702273" class="partnership-call">
-                    <i class="fas fa-phone-alt"></i> Call 09021702273 for Registration Form
-                </a>
+                
+                <div class="agreement-box">
+                    <h4>TERMS & AGREEMENT</h4>
+                    <p>By proceeding with this partnership/investment, you agree to the following terms:</p><br>
+                    <ul>
+                        <li>The minimum Partnership/investment amount is <strong>₦50,000</strong> and the maximum is <strong>₦500,000</strong>.</li>
+                        <li>Partners/Investors will receive a <strong>3% monthly return</strong>, totaling 36% annually, subject to business performance.</li>
+                        <li>Returns are paid monthly into the Partner/investor’s provided bank account.</li>
+                        <li>Investment capital is <strong>locked for 12 Months</strong> and cannot be withdrawn prematurely without prior agreement. Withdrawal before the stipulated time results in <strong>forfeiture of 50% of your capital</strong>.</li>
+                        <li>Uriel Global Tech Venture reserves the right to manage funds across its business operations to generate returns.</li>
+                        <li>All information provided must be accurate and verifiable.</li>
+                        <li>This agreement becomes binding once payment is confirmed.</li>
+                    </ul>
+                </div>
+
+                <div class="bank-details" data-aos="zoom-in">
+                    <h4><i class="fas fa-university"></i> OFFICIAL PAYMENT DETAILS</h4>
+                    <div class="bank-info">
+                        <p>ACCOUNT NAME: <span>URIEL GLOBAL TECH VENTURES</span></p>
+                        <p>ACCOUNT NO: <span>2047773150</span></p>
+                        <p>BANK NAME: <span>FIRST BANK NIGERIA</span></p>
+                    </div>
+                    <div class="bank-remark">
+                        <span><strong>REMARK:</strong> Share payment receipts via:</span>
+                        <a href="https://wa.me/2349038467393" class="wa-link-icon" target="_blank" title="Send Receipt via WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="partnership-cta">
+                    <a href="https://forms.gle/SKHacK4jTCW2BoHo7" target="_blank" class="btn">Register After Payment</a>
+                    <span class="cert-note">After Registration and Payment: You will receive a Certificate of Partnership/Investment.</span>
+                </div>
             </div>
         </div>
     </section>
